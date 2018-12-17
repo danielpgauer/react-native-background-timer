@@ -10,15 +10,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class BackgroundTimerPackage implements ReactPackage {
+public class BgTimerPackage implements ReactPackage {
 
-    public BackgroundTimerPackage() {
+    public BgTimerPackage() {
     }
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
-        modules.add(new BackgroundTimerModule(reactContext));
+        modules.add(new BgTimerModule(reactContext));
 
         return modules;
     }

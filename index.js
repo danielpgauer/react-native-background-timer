@@ -6,22 +6,22 @@ import {
   Platform,
 } from 'react-native';
 
-const { RNBackgroundTimer } = NativeModules;
-const Emitter = new NativeEventEmitter(RNBackgroundTimer);
+const { RNBgTimer } = NativeModules;
+const Emitter = new NativeEventEmitter(RNBgTimer);
 
-class BackgroundTimer {
+class BgTimer {
   constructor() {
     this.uniqueId = 0;
     this.callbacks = {};
 
-    Emitter.addListener('backgroundTimer.timeout', (id) => {
+    Emitter.addListener('bgTimer.timeout', (id) => {
       if (this.callbacks[id]) {
         const callbackById = this.callbacks[id];
         const { callback } = callbackById;
         if (!this.callbacks[id].interval) {
           delete this.callbacks[id];
         } else {
-          RNBackgroundTimer.setTimeout(id, this.callbacks[id].timeout);
+          RNBgTimer.setTimeout(id, this.callbacks[id].timeout);
         }
         callback();
       }
@@ -30,36 +30,36 @@ class BackgroundTimer {
 
   // Original API
   start(delay = 0) {
-    return RNBackgroundTimer.start(delay);
+    return RNBgTimer.start(delay);
   }
 
   stop() {
-    return RNBackgroundTimer.stop();
+    return RNBgTimer.stop();
   }
 
-  runBackgroundTimer(callback, delay) {
+  runBgTimer(callback, delay) {
     const EventEmitter = Platform.select({
       ios: () => NativeAppEventEmitter,
       android: () => DeviceEventEmitter,
     })();
     this.start(0);
-    this.backgroundListener = EventEmitter.addListener('backgroundTimer', () => {
+    this.backgroundListener = EventEmitter.addListener('bgTimer', () => {
       this.backgroundListener.remove();
       this.backgroundClockMethod(callback, delay);
     });
   }
 
   backgroundClockMethod(callback, delay) {
-    this.backgroundTimer = this.setTimeout(() => {
+    this.bgTimer = this.setTimeout(() => {
       callback();
       this.backgroundClockMethod(callback, delay);
     },
     delay);
   }
 
-  stopBackgroundTimer() {
+  stopBgTimer() {
     this.stop();
-    this.clearTimeout(this.backgroundTimer);
+    this.clearTimeout(this.bgTimer);
   }
 
   // New API, allowing for multiple timers
@@ -71,14 +71,14 @@ class BackgroundTimer {
       interval: false,
       timeout,
     };
-    RNBackgroundTimer.setTimeout(timeoutId, timeout);
+    RNBgTimer.setTimeout(timeoutId, timeout);
     return timeoutId;
   }
 
   clearTimeout(timeoutId) {
     if (this.callbacks[timeoutId]) {
       delete this.callbacks[timeoutId];
-      // RNBackgroundTimer.clearTimeout(timeoutId);
+      // RNBgTimer.clearTimeout(timeoutId);
     }
   }
 
@@ -90,16 +90,16 @@ class BackgroundTimer {
       interval: true,
       timeout,
     };
-    RNBackgroundTimer.setTimeout(intervalId, timeout);
+    RNBgTimer.setTimeout(intervalId, timeout);
     return intervalId;
   }
 
   clearInterval(intervalId) {
     if (this.callbacks[intervalId]) {
       delete this.callbacks[intervalId];
-      // RNBackgroundTimer.clearTimeout(intervalId);
+      // RNBgTimer.clearTimeout(intervalId);
     }
   }
 }
 
-export default new BackgroundTimer();
+export default new BgTimer();

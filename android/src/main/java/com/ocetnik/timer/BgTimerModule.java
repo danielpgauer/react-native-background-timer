@@ -12,7 +12,7 @@ import com.facebook.react.modules.core.DeviceEventManagerModule;
 
 import java.lang.Runnable;
 
-public class BackgroundTimerModule extends ReactContextBaseJavaModule {
+public class BgTimerModule extends ReactContextBaseJavaModule {
 
     private Handler handler;
     private ReactContext reactContext;
@@ -35,7 +35,7 @@ public class BackgroundTimerModule extends ReactContextBaseJavaModule {
         }
     };
 
-    public BackgroundTimerModule(ReactApplicationContext reactContext) {
+    public BgTimerModule(ReactApplicationContext reactContext) {
         super(reactContext);
         this.reactContext = reactContext;
         this.powerManager = (PowerManager) getReactApplicationContext().getSystemService(reactContext.POWER_SERVICE);
@@ -45,7 +45,7 @@ public class BackgroundTimerModule extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "RNBackgroundTimer";
+        return "RNBgTimer";
     }
 
     @ReactMethod
@@ -54,7 +54,7 @@ public class BackgroundTimerModule extends ReactContextBaseJavaModule {
         runnable = new Runnable() {
             @Override
             public void run() {
-                sendEvent(reactContext, "backgroundTimer");
+                sendEvent(reactContext, "bgTimer");
             }
         };
 
@@ -82,7 +82,7 @@ public class BackgroundTimerModule extends ReactContextBaseJavaModule {
                 if (getReactApplicationContext().hasActiveCatalystInstance()) {
                     getReactApplicationContext()
                         .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                        .emit("backgroundTimer.timeout", id);
+                        .emit("bgTimer.timeout", id);
                 }
            }
         }, timeout);

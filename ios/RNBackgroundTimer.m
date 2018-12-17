@@ -1,27 +1,27 @@
 //
-//  RNBackgroundTimer.m
-//  react-native-background-timer
+//  RNBgTimer.m
+//  react-native-bg-timer
 //
 //  Created by IjzerenHein on 06-09-2016.
 //  Copyright (c) ATO Gear. All rights reserved.
 //
 
 @import UIKit;
-#import "RNBackgroundTimer.h"
+#import "RNBgTimer.h"
 
-@implementation RNBackgroundTimer {
+@implementation RNBgTimer {
     UIBackgroundTaskIdentifier bgTask;
     int delay;
 }
 
 RCT_EXPORT_MODULE()
 
-- (NSArray<NSString *> *)supportedEvents { return @[@"backgroundTimer", @"backgroundTimer.timeout"]; }
+- (NSArray<NSString *> *)supportedEvents { return @[@"bgTimer", @"bgTimer.timeout"]; }
 
 - (void) _start
 {
     [self _stop];
-    bgTask = [[UIApplication sharedApplication] beginBackgroundTaskWithName:@"RNBackgroundTimer" expirationHandler:^{
+    bgTask = [[UIApplication sharedApplication] beginBackgroundTaskWithName:@"RNBgTimer" expirationHandler:^{
         // Clean up any unfinished task business by marking where you
         // stopped or ending the task outright.
         [[UIApplication sharedApplication] endBackgroundTask:bgTask];
@@ -31,7 +31,7 @@ RCT_EXPORT_MODULE()
     UIBackgroundTaskIdentifier thisBgTask = bgTask;
     dispatch_async(dispatch_get_main_queue(), ^{
         if ([self bridge] != nil && thisBgTask == bgTask) {
-            [self sendEventWithName:@"backgroundTimer" body:[NSNumber numberWithInt:(int)thisBgTask]];
+            [self sendEventWithName:@"bgTimer" body:[NSNumber numberWithInt:(int)thisBgTask]];
         }
     });
 }
@@ -65,13 +65,13 @@ RCT_EXPORT_METHOD(setTimeout:(int)timeoutId
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 {
-    __block UIBackgroundTaskIdentifier task = [[UIApplication sharedApplication] beginBackgroundTaskWithName:@"RNBackgroundTimer" expirationHandler:^{
+    __block UIBackgroundTaskIdentifier task = [[UIApplication sharedApplication] beginBackgroundTaskWithName:@"RNBgTimer" expirationHandler:^{
         [[UIApplication sharedApplication] endBackgroundTask:task];
     }];
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, timeout * NSEC_PER_MSEC), dispatch_get_main_queue(), ^{
         if ([self bridge] != nil) {
-            [self sendEventWithName:@"backgroundTimer.timeout" body:[NSNumber numberWithInt:timeoutId]];
+            [self sendEventWithName:@"bgTimer.timeout" body:[NSNumber numberWithInt:timeoutId]];
         }
         [[UIApplication sharedApplication] endBackgroundTask:task];
     });

@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>RNBackgroundTimer-tvOS.xcscheme</key>
+		<key>RNBgTimer-tvOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>42</integer>
 		</dict>
-		<key>RNBackgroundTimer.xcscheme</key>
+		<key>RNBgTimer.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>41</integer>

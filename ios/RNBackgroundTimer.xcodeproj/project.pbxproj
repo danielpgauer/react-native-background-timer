@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6419269B1ECB4266009CF731 /* RNBackgroundTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNBackgroundTimer.m */; };
-		B3E7B58A1CC2AC0600A0062D /* RNBackgroundTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNBackgroundTimer.m */; };
+		6419269B1ECB4266009CF731 /* RNBgTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNBgTimer.m */; };
+		B3E7B58A1CC2AC0600A0062D /* RNBgTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNBgTimer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,10 +33,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		134814201AA4EA6300B7C361 /* libRNBackgroundTimer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNBackgroundTimer.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		641926921ECB4257009CF731 /* libRNBackgroundTimer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNBackgroundTimer.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3E7B5881CC2AC0600A0062D /* RNBackgroundTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNBackgroundTimer.h; sourceTree = "<group>"; };
-		B3E7B5891CC2AC0600A0062D /* RNBackgroundTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNBackgroundTimer.m; sourceTree = "<group>"; };
+		134814201AA4EA6300B7C361 /* libRNBgTimer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNBgTimer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		641926921ECB4257009CF731 /* libRNBgTimer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNBgTimer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3E7B5881CC2AC0600A0062D /* RNBgTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNBgTimer.h; sourceTree = "<group>"; };
+		B3E7B5891CC2AC0600A0062D /* RNBgTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNBgTimer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 		134814211AA4EA7D00B7C361 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				134814201AA4EA6300B7C361 /* libRNBackgroundTimer.a */,
+				134814201AA4EA6300B7C361 /* libRNBgTimer.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,19 +68,19 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				B3E7B5881CC2AC0600A0062D /* RNBackgroundTimer.h */,
-				B3E7B5891CC2AC0600A0062D /* RNBackgroundTimer.m */,
+				B3E7B5881CC2AC0600A0062D /* RNBgTimer.h */,
+				B3E7B5891CC2AC0600A0062D /* RNBgTimer.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
-				641926921ECB4257009CF731 /* libRNBackgroundTimer.a */,
+				641926921ECB4257009CF731 /* libRNBgTimer.a */,
 			);
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		58B511DA1A9E6C8500147676 /* RNBackgroundTimer */ = {
+		58B511DA1A9E6C8500147676 /* RNBgTimer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNBackgroundTimer" */;
+			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNBgTimer" */;
 			buildPhases = (
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
@@ -90,14 +90,14 @@
 			);
 			dependencies = (
 			);
-			name = RNBackgroundTimer;
+			name = RNBgTimer;
 			productName = RCTDataManager;
-			productReference = 134814201AA4EA6300B7C361 /* libRNBackgroundTimer.a */;
+			productReference = 134814201AA4EA6300B7C361 /* libRNBgTimer.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		641926911ECB4257009CF731 /* RNBackgroundTimer-tvOS */ = {
+		641926911ECB4257009CF731 /* RNBgTimer-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6419269A1ECB4257009CF731 /* Build configuration list for PBXNativeTarget "RNBackgroundTimer-tvOS" */;
+			buildConfigurationList = 6419269A1ECB4257009CF731 /* Build configuration list for PBXNativeTarget "RNBgTimer-tvOS" */;
 			buildPhases = (
 				6419268E1ECB4257009CF731 /* Sources */,
 				6419268F1ECB4257009CF731 /* Frameworks */,
@@ -107,9 +107,9 @@
 			);
 			dependencies = (
 			);
-			name = "RNBackgroundTimer-tvOS";
-			productName = "RNBackgroundTimer-tvOS";
-			productReference = 641926921ECB4257009CF731 /* libRNBackgroundTimer.a */;
+			name = "RNBgTimer-tvOS";
+			productName = "RNBgTimer-tvOS";
+			productReference = 641926921ECB4257009CF731 /* libRNBgTimer.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -130,7 +130,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "RNBackgroundTimer" */;
+			buildConfigurationList = 58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "RNBgTimer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -142,8 +142,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				58B511DA1A9E6C8500147676 /* RNBackgroundTimer */,
-				641926911ECB4257009CF731 /* RNBackgroundTimer-tvOS */,
+				58B511DA1A9E6C8500147676 /* RNBgTimer */,
+				641926911ECB4257009CF731 /* RNBgTimer-tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -153,7 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3E7B58A1CC2AC0600A0062D /* RNBackgroundTimer.m in Sources */,
+				B3E7B58A1CC2AC0600A0062D /* RNBgTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,7 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6419269B1ECB4266009CF731 /* RNBackgroundTimer.m in Sources */,
+				6419269B1ECB4266009CF731 /* RNBgTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +253,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = RNBackgroundTimer;
+				PRODUCT_NAME = RNBgTimer;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -269,7 +269,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = RNBackgroundTimer;
+				PRODUCT_NAME = RNBgTimer;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -286,7 +286,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = RNBackgroundTimer;
+				PRODUCT_NAME = RNBgTimer;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				TVOS_DEPLOYMENT_TARGET = 10.2;
@@ -305,7 +305,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = RNBackgroundTimer;
+				PRODUCT_NAME = RNBgTimer;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				TVOS_DEPLOYMENT_TARGET = 10.2;
@@ -315,7 +315,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "RNBackgroundTimer" */ = {
+		58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "RNBgTimer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58B511ED1A9E6C8500147676 /* Debug */,
@@ -324,7 +324,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNBackgroundTimer" */ = {
+		58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNBgTimer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58B511F01A9E6C8500147676 /* Debug */,
@@ -333,7 +333,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6419269A1ECB4257009CF731 /* Build configuration list for PBXNativeTarget "RNBackgroundTimer-tvOS" */ = {
+		6419269A1ECB4257009CF731 /* Build configuration list for PBXNativeTarget "RNBgTimer-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				641926981ECB4257009CF731 /* Debug */,
