@@ -1,4 +1,4 @@
-package com.ocetnik.timer;
+package com.ocetnik.bgtimer;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;

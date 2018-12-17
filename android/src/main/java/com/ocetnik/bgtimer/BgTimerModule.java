@@ -1,4 +1,4 @@
-package com.ocetnik.timer;
+package com.ocetnik.bgtimer;
 
 import android.os.Handler;
 import android.os.PowerManager;
